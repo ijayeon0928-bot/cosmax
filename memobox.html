@@ -183,7 +183,7 @@
   }
   .tag-chip:hover{ border-color: var(--accent); color: var(--ink); }
   .tag-chip.active{
-    color:#fff;
+    color: var(--ink);
     border-color: transparent;
     box-shadow: var(--shadow-sm);
   }
@@ -855,11 +855,11 @@
   const COUNTER_KEY = 'memobox_counter';
 
   const TAG_META = [
-    { key: '회의록',   label: '회의록',   solid: '#2966A3', tint: '#D3E0EE' },
-    { key: 'TODO',      label: 'TO DO',    solid: '#A33D29', tint: '#EED7D3' },
-    { key: '처방정보', label: '처방 정보', solid: '#9B7427', tint: '#EEE5D3' },
-    { key: '실험결과', label: '실험 결과', solid: '#238B68', tint: '#D3EEE5' },
-    { key: '기타',      label: '기타',     solid: '#7A29A3', tint: '#E5D3EE' },
+    { key: '회의록',   label: '회의록',   solid: '#2F8FC0', tint: '#CFEBF7' },
+    { key: 'TODO',      label: 'TO DO',    solid: '#D94F86', tint: '#FBD9E7' },
+    { key: '처방정보', label: '처방 정보', solid: '#C99A1E', tint: '#FCEFB0' },
+    { key: '실험결과', label: '실험 결과', solid: '#5FA13A', tint: '#DFF0BE' },
+    { key: '기타',      label: '기타',     solid: '#D9752E', tint: '#FBE0C4' },
   ];
   const tagInfo = (key) => TAG_META.find(t => t.key === key) || TAG_META[TAG_META.length - 1];
 
@@ -965,7 +965,7 @@
       const info = tagInfo(chip.dataset.tag);
       const isActive = chip.dataset.tag === selectedTag;
       chip.classList.toggle('active', isActive);
-      chip.style.background = isActive ? info.solid : '';
+      chip.style.background = isActive ? info.tint : '';
     });
   }
   tagPicker.addEventListener('click', (e) => {
